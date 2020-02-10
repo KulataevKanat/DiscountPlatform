@@ -18,7 +18,7 @@ public class NetworkCategories {
     @JoinColumn(name = "categories_id", columnDefinition = "integer")
     private Categories categories;
 
-    @OneToMany(mappedBy = "network_categories", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "networkCategories", cascade = CascadeType.ALL)
     private List<SubCategories> subCategories;
 
     public NetworkCategories() {

@@ -14,7 +14,7 @@ public class MainCategories {
     @Column(name = "name", columnDefinition = "varchar")
     private String name;
 
-    @OneToMany(mappedBy = "main_categories", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "mainCategories", cascade = CascadeType.ALL)
     private List<Categories> categories;
 
     public MainCategories() {
