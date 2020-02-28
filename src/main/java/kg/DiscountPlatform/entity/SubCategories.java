@@ -22,7 +22,9 @@ public class SubCategories {
     private List<Products> products;
 
     public SubCategories() {
+
     }
+
 
     public Long getId() {
         return id;
