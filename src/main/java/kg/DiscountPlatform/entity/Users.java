@@ -1,19 +1,10 @@
 package kg.DiscountPlatform.entity;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import static java.util.stream.Collectors.toList;
 
 @Entity
 @Table(name = "users")
-public class Users implements UserDetails {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", columnDefinition = "BIGSERIAL")
@@ -28,14 +19,17 @@ public class Users implements UserDetails {
     @Column(name = "user_password", columnDefinition = "varchar(100)")
     private String password;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            indexes = @Index(columnList = "user_id"))
-    @Column(name = "roles", nullable = false)
-    private List<String> roles = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "roles_id", columnDefinition = "integer")
+    private Roles roles;
+
+    @ManyToOne
+    @JoinColumn(name = "status_id", columnDefinition = "integer")
+    private Status status;
 
     public Users() {
+        this.roles = new Roles("ROLE_USER");
+        this.status = new Status("user");
     }
 
     public Long getId() {
@@ -54,52 +48,32 @@ public class Users implements UserDetails {
         this.mail = mail;
     }
 
-    @Override
     public String getUsername() {
         return username;
     }
 
-    public List<String> getRoles() {
+    public String getPassword() {
+        return password;
+    }
+
+    public Roles getRoles() {
         return roles;
     }
 
-    public void setRoles(List<String> roles) {
+    public void setRoles(Roles roles) {
         this.roles = roles;
     }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
+    public Status getStatus() {
+        return status;
     }
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return
-                this.roles.stream().map(SimpleGrantedAuthority::new).collect(toList());
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
     }
 
     public void setPassword(String password) {
