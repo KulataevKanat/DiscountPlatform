@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface RolesRepository extends JpaRepository<Roles, Long> {
     @Query("SELECT r FROM Roles r WHERE lower(r.role) LIKE coalesce(lower(cast(CONCAT('%',:search,'%') as text)), lower(r.role)) ")
-    List<Roles> findRolesByRole(@Param("search") String role);
+    List<Roles> findAllRolesByRole(@Param("search") String role);
 }

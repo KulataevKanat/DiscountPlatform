@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface StatusRepository extends JpaRepository<Status, Long> {
     @Query("SELECT s FROM Status s WHERE lower(s.status) LIKE coalesce(lower(cast(CONCAT('%',:search,'%') as text)), lower(s.status)) ")
-    List<Status> findStatusByStatus(@Param("search") String status);
+    List<Status> findAllStatusByStatus(@Param("search") String status);
 }

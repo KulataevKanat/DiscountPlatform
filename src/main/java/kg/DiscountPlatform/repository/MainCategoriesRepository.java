@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface MainCategoriesRepository extends JpaRepository<MainCategories, Long> {
     @Query("SELECT mc FROM MainCategories mc WHERE lower(mc.name) LIKE coalesce(lower(cast(CONCAT('%',:search,'%') as text)), lower(mc.name)) ")
-    List<MainCategories> findMainCategoriesByName(@Param("search") String name);
+    List<MainCategories> findAllMainCategoriesByName(@Param("search") String name);
 }

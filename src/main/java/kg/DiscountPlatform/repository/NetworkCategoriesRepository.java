@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface NetworkCategoriesRepository extends JpaRepository<NetworkCategories, Long> {
     @Query("SELECT nt FROM NetworkCategories nt WHERE lower(nt.name) LIKE coalesce(lower(cast(CONCAT('%',:search,'%') as text)), lower(nt.name)) ")
-    List<NetworkCategories> findNetworkCategoriesByName(@Param("search") String name);
+    List<NetworkCategories> findAllNetworkCategoriesByName(@Param("search") String name);
 }

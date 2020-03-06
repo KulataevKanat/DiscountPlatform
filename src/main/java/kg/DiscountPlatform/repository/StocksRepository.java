@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface StocksRepository extends JpaRepository<Stocks, Long> {
     @Query("SELECT s FROM Stocks s WHERE lower(s.name) LIKE coalesce(lower(cast(CONCAT('%',:search,'%') as text)), lower(s.name)) ")
-    List<Stocks> findStocksByName(@Param("search") String name);
+    List<Stocks> findAllStocksByName(@Param("search") String name);
 }
