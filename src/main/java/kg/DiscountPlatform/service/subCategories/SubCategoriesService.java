@@ -1,0 +1,19 @@
+package kg.DiscountPlatform.service.subCategories;
+
+import kg.DiscountPlatform.entity.SubCategories;
+
+import java.util.List;
+
+public interface SubCategoriesService {
+    SubCategories addSubCategory(SubCategories subCategories);
+
+    SubCategories deleteById(Long id);
+
+    SubCategories changeSubCategory(SubCategories subCategories);
+
+    SubCategories findById(Long id);
+
+    List<SubCategories> findAllSubCategoriesByName(String name);
+
+    List<SubCategories> findAll();
+}
