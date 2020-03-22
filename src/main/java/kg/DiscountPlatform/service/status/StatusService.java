@@ -7,7 +7,7 @@ import java.util.List;
 public interface StatusService {
     Status addStatus(Status status);
 
-    Status deleteById(Long id);
+    void deleteById(Long id);
 
     Status changeStatus(Status status);
 

@@ -7,7 +7,7 @@ import java.util.List;
 public interface MainCategoriesService {
     MainCategories addMainCategory(MainCategories mainCategories);
 
-    MainCategories deleteById(Long id);
+    void deleteById(Long id);
 
     MainCategories changeMainCategory(MainCategories mainCategories);
 

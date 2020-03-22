@@ -7,7 +7,7 @@ import java.util.List;
 public interface DiscountsService {
     Discounts addDiscount(Discounts discounts);
 
-    Discounts deleteById(Long id);
+    void deleteById(Long id);
 
     Discounts changeDiscount(Discounts discounts);
 

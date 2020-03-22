@@ -7,7 +7,7 @@ import java.util.List;
 public interface RolesService {
     Roles addRole(Roles roles);
 
-    Roles deleteById(Long id);
+    void deleteById(Long id);
 
     Roles changeRole(Roles roles);
 

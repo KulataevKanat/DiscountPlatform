@@ -7,7 +7,7 @@ import java.util.List;
 public interface NetworkCategoriesService {
     NetworkCategories addNetworkCategory(NetworkCategories networkCategories);
 
-    NetworkCategories deleteById(Long id);
+    void deleteById(Long id);
 
     NetworkCategories changeNetworkCategory(NetworkCategories networkCategories);
 

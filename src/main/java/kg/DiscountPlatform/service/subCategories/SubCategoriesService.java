@@ -7,7 +7,7 @@ import java.util.List;
 public interface SubCategoriesService {
     SubCategories addSubCategory(SubCategories subCategories);
 
-    SubCategories deleteById(Long id);
+    void deleteById(Long id);
 
     SubCategories changeSubCategory(SubCategories subCategories);
 

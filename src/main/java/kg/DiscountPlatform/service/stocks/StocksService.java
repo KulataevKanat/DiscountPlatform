@@ -7,7 +7,7 @@ import java.util.List;
 public interface StocksService {
     Stocks addStock(Stocks stocks);
 
-    Stocks deleteById(Long id);
+    void deleteById(Long id);
 
     Stocks changeStock(Stocks stocks);
 
