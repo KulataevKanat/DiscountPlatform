@@ -15,5 +15,9 @@ public interface UsersService {
 
     List<Users> findAllUsersByUsername(String username);
 
+    List<Users> findAllRolesById(Long roleId);
+
+    List<Users> findAllStatusesById(Long statusId);
+
     List<Users> findAll();
 }

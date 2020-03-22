@@ -38,6 +38,16 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
+    public List<Users> findAllRolesById(Long roleId) {
+        return usersRepository.findAllRolesById(roleId);
+    }
+
+    @Override
+    public List<Users> findAllStatusesById(Long statusId) {
+        return usersRepository.findAllStatusesById(statusId);
+    }
+
+    @Override
     public List<Users> findAll() {
         return usersRepository.findAll();
     }

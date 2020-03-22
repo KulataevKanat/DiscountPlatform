@@ -15,5 +15,11 @@ public interface ProductsService {
 
     List<Products> findAllProductsByName(String name);
 
+    List<Products> findAllSubCategoriesById(Long subCategoriesId);
+
+    List<Products> findAllDiscountsById(Long discountsId);
+
+    List<Products> findAllStocksById(Long stocksId);
+
     List<Products> findAll();
 }

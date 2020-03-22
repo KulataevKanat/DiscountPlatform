@@ -38,6 +38,12 @@ public class SubCategoriesServiceImpl implements SubCategoriesService {
     }
 
     @Override
+    public List<SubCategories> findAllNetworkCategoriesById(Long networkCategoriesId) {
+        return subCategoriesRepository.findAllNetworkCategoriesById(networkCategoriesId);
+    }
+
+
+    @Override
     public List<SubCategories> findAll() {
         return subCategoriesRepository.findAll();
     }

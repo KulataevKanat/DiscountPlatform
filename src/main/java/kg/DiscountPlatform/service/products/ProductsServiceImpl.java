@@ -38,6 +38,21 @@ public class ProductsServiceImpl implements ProductsService {
     }
 
     @Override
+    public List<Products> findAllSubCategoriesById(Long subCategoriesId) {
+        return productsRepository.findAllSubCategoriesById(subCategoriesId);
+    }
+
+    @Override
+    public List<Products> findAllDiscountsById(Long discountsId) {
+        return productsRepository.findAllDiscountsById(discountsId);
+    }
+
+    @Override
+    public List<Products> findAllStocksById(Long stocksId) {
+        return productsRepository.findAllStocksById(stocksId);
+    }
+
+    @Override
     public List<Products> findAll() {
         return productsRepository.findAll();
     }

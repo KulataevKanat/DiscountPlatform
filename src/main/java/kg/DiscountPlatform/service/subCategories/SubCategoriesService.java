@@ -15,5 +15,7 @@ public interface SubCategoriesService {
 
     List<SubCategories> findAllSubCategoriesByName(String name);
 
+    List<SubCategories> findAllNetworkCategoriesById(Long networkCategoriesId);
+
     List<SubCategories> findAll();
 }

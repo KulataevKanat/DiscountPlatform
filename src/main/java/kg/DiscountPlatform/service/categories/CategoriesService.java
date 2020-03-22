@@ -15,5 +15,7 @@ public interface CategoriesService {
 
     List<Categories> findAllCategoriesByName(String name);
 
+    List<Categories> findAllMainCategoriesById(Long mainCategoriesId);
+
     List<Categories> findAll();
 }

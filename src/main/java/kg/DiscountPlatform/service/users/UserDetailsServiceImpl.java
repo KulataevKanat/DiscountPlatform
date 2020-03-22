@@ -1,5 +1,6 @@
 package kg.DiscountPlatform.service.users;
 
+import kg.DiscountPlatform.entity.MainCategories;
 import kg.DiscountPlatform.entity.Users;
 import kg.DiscountPlatform.repository.UsersRepository;
 import kg.DiscountPlatform.security.JwtUserFactory;

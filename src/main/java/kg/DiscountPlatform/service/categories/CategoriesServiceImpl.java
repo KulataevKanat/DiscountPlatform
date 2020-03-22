@@ -38,6 +38,11 @@ public class CategoriesServiceImpl implements CategoriesService {
     }
 
     @Override
+    public List<Categories> findAllMainCategoriesById(Long mainCategoriesId) {
+        return categoriesRepository.findAllMainCategoriesById(mainCategoriesId);
+    }
+
+    @Override
     public List<Categories> findAll() {
         return categoriesRepository.findAll();
     }
