@@ -12,4 +12,6 @@ import java.util.List;
 public interface SubCategoriesRepository extends JpaRepository<SubCategories, Long> {
     @Query("SELECT sc FROM SubCategories sc WHERE lower(sc.name) LIKE coalesce(lower(cast(CONCAT('%',:search,'%') as text)), lower(sc.name)) ")
     List<SubCategories> findAllSubCategoriesByName(@Param("search") String name);
+
+    List<SubCategories> findAllNetworkCategoriesById(Long networkCategoriesId);
 }

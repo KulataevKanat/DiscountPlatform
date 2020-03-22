@@ -13,4 +13,5 @@ public interface CategoriesRepository extends JpaRepository<Categories, Long> {
     @Query("SELECT c FROM Categories c WHERE lower(c.name) LIKE coalesce(lower(cast(CONCAT('%',:search,'%') as text)), lower(c.name)) ")
     List<Categories> findAllCategoriesByName(@Param("search") String name);
 
+    List<Categories> findAllMainCategoriesById(Long mainCategoriesId);
 }
